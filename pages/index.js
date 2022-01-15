@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import styles from './style.module.scss';
+import HeroSection from "../components/HeroSection";
 
 export default function Home() {
   return (
@@ -52,7 +54,11 @@ export default function Home() {
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
       </Head>
 
-      <main>
+      <main className={styles.main}>
+        <h1 className={styles.hidden}>
+          Chat App
+        </h1>
+        <HeroSection />
       </main>
     </>
   )
