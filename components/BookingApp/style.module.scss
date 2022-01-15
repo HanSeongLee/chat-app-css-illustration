@@ -1,0 +1,263 @@
+
+.bookingApp {
+  position: relative;
+  background: #FFFFFF;
+  box-shadow: 0px 30px 60px -10px rgba(62, 39, 83, 0.251202);
+  border-radius: 30px;
+  width: 247px;
+  height: 505px;
+  padding: 11px 9.5px;
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 50%;
+    width: 129px;
+    height: 29px;
+    background: #FFFFFF;
+    border-radius: 0px 0px 14px 14px;
+    transform: translateX(-50%);
+  }
+
+  .appWrapper {
+    background: #F5F3F7;
+    border-radius: 20px;
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid #F5F3F7;
+
+    .titleBar {
+      background: rgba(255, 0, 0, 0.5);
+      display: flex;
+      align-items: center;
+      height: 66px;
+      padding-top: 18px;
+      padding-left: 15.5px;
+      padding-right: 16.5px;
+      background: linear-gradient(225deg, #E844FF 0%, #8739FF 100%);
+      box-shadow: 0px 0px 13px rgba(62, 39, 83, 0.3);
+      border-radius: 20px 20px 6px 6px;
+      grid-gap: 8px;
+
+      .backButton {
+        position: relative;
+        background: transparent;
+        border: 0;
+        width: 5px;
+        height: 10px;
+
+        &::before {
+          position: absolute;
+          top: 0px;
+          left: 1px;
+          content: "";
+          width: 2px;
+          height: 7px;
+          border-radius: 3px;
+          background: #FFFFFF;
+          transform: rotateZ(35deg);
+        }
+
+        &::after {
+          position: absolute;
+          bottom: 0px;
+          left: 1px;
+          content: "";
+          width: 2px;
+          height: 6.5px;
+          border-radius: 3px;
+          background: #FFFFFF;
+          transform: rotateZ(-40deg);
+        }
+      }
+
+      .userContainer {
+        flex: 1;
+        display: flex;
+        grid-gap: 8px;
+
+        .avatar {
+          width: 24px;
+          height: 24px;
+          border: 1px solid #FFFFFF;
+          box-sizing: border-box;
+          border-radius: 50%;
+        }
+
+        .userInfoContainer {
+          display: flex;
+          flex-direction: column;
+          grid-gap: 2px;
+
+          .username {
+            font-weight: 500;
+            font-size: 11px;
+            line-height: 13px;
+            color: #FFFFFF;
+          }
+
+          .status {
+            font-size: 8px;
+            line-height: 9px;
+            color: #D99EFF;
+          }
+        }
+      }
+
+      .moreButton {
+        display: flex;
+        flex-direction: column;
+        grid-gap: 1px;
+        background: transparent;
+        border: 0;
+
+        .circle {
+          background: #FFFFFF;
+          box-sizing: border-box;
+          width: 2px;
+          height: 2px;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    .chat {
+      padding: 22px 15px;
+      -webkit-transform: scale(0.5);
+      -webkit-transform-origin: top left;
+      width: 200%;
+
+      .chatList {
+        display: flex;
+        flex-direction: column;
+        grid-gap: 16px;
+        list-style: none;
+        font-size: 16px;
+        line-height: 22px;
+
+        @mixin bubble($background, $color) {
+          color: $color;
+          background: $background;
+          padding: 12px 18px;
+          max-width: 256px;
+        }
+
+        .otherChatBubble {
+          @include bubble(#EEE5F4, #9341C8);
+          border-radius: 20px 20px 20px 8px;
+        }
+
+        .meChatBubble {
+          @include bubble(#FFFFFF, #6E5D7E);
+          border-radius: 20px 20px 8px 20px;
+          box-shadow: 0px 20px 10px -10px rgba(62, 39, 83, 0.05);
+        }
+
+        .me {
+          display: flex;
+          justify-content: right;
+        }
+
+        .imageContainer {
+          display: flex;
+          grid-gap: 16px;
+
+          .image {
+            width: 80px;
+            height: 80px;
+            box-shadow: 0px 20px 10px -10px rgba(62, 39, 83, 0.05);
+            border-radius: 20px;
+          }
+        }
+
+        .actionButton {
+          display: flex;
+          align-items: center;
+          background: linear-gradient(160deg, #E844FF 0%, #8739FF 100%);
+          box-shadow: 0px 20px 10px -10px rgba(62, 39, 83, 0.05);
+          border-radius: 20px 20px 20px 8px;
+          width: 320px;
+          border: 0;
+          font-size: 16px;
+          line-height: 22px;
+          color: #FFFFFF;
+          text-align: left;
+          padding: 20px 32px 20px 16px;
+
+          &::before {
+            display: inline-block;
+            content: "";
+            width: 20px;
+            height: 20px;
+            border: 2px solid #FFFFFF;
+            border-radius: 50%;
+            margin-right: 16px;
+          }
+
+          .activity {
+            flex: 1;
+          }
+
+          .price {
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 22px;
+            color: #FFFFFF;
+          }
+        }
+      }
+
+      .inputWrapper {
+        position: relative;
+        margin-top: 32px;
+        display: flex;
+        background: #FFFFFF;
+        border-radius: 34px;
+        padding: 8px 8px 8px 34px;
+
+        .placeholder {
+          flex: 1;
+          font-size: 18px;
+          line-height: 22px;
+          color: #C5C9CC;
+          display: flex;
+          align-items: center;
+        }
+
+        .sendButton {
+          position: relative;
+          background: #3E2753;
+          border: 0;
+          border-radius: 50%;
+          width: 50px;
+          height: 50px;
+
+          &::before {
+            position: absolute;
+            top: calc(50% - 2px);
+            left: 50%;
+            content: "";
+            width: 6px;
+            height: 14px;
+            border-radius: 3px;
+            background: #FFFFFF;
+            transform: translate(-50%, -50%) rotateZ(-45deg);
+          }
+
+          &::after {
+            position: absolute;
+            bottom: calc(50% + 3px);
+            left: calc(50% - 0.5px);
+            content: "";
+            width: 6px;
+            height: 15px;
+            border-radius: 3px;
+            background: #FFFFFF;
+            transform: translate(-50%, 100%) rotateZ(45deg);
+          }
+        }
+      }
+    }
+  }
+}
