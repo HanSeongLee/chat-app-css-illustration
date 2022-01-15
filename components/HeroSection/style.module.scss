@@ -1,8 +1,16 @@
+@import "styles/utils";
 
 .heroSection {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 100vh;
+
+  @include media(">desktop") {
+    flex-direction: row;
+    justify-content: center;
+    grid-gap: 125px;
+  }
 
   &::before {
     position: absolute;
@@ -14,6 +22,16 @@
     height: 1018px;
     border-radius: 255px;
     z-index: -1;
+
+    @include media(">desktop") {
+      left: -90px;
+      top: -318px;
+      min-width: 210px;
+      min-height: 618px;
+      width: 35.5vw;
+      height: 127.5vh;
+      border-radius: 255vw;
+    }
   }
 
   &::after {
@@ -27,22 +45,43 @@
     height: 1018px;
     border-radius: 255px;
     z-index: -1;
+
+    @include media(">desktop") {
+      bottom: -337px;
+      right: -135px;
+      min-width: 210px;
+      min-height: 618px;
+      width: 35.5vw;
+      height: 127.5vh;
+      border-radius: 255vw;
+    }
+  }
+
+  .content {
+    max-width: 445px;
+    text-align: center;
+
+    @include media(">desktop") {
+      text-align: left;
+    }
   }
 
   .title {
     font-weight: 500;
     font-size: 40px;
     line-height: 47px;
-    text-align: center;
     color: #3E2753;
     margin-top: 64px;
     margin-bottom: 24px;
+
+    @include media(">desktop") {
+      margin-top: 0;
+    }
   }
 
   .description {
     font-size: 16px;
     line-height: 28px;
-    text-align: center;
     color: #A39DA9;
   }
 }
