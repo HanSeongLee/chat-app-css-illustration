@@ -136,6 +136,25 @@
         font-size: 16px;
         line-height: 22px;
 
+        @keyframes showing {
+          from {
+            transform: scale(0);
+          }
+
+          to {
+            transform: scale(1);
+          }
+        }
+
+        li {
+          transform-origin: bottom var(--direction);
+          transform: scale(0);
+          animation-duration: 1s;
+          animation-delay: var(--delay);
+          animation-name: showing;
+          animation-fill-mode: forwards;
+        }
+
         @mixin bubble($background, $color) {
           color: $color;
           background: $background;
